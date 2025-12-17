@@ -4,64 +4,76 @@
   <meta charset="UTF-8">
   <title>Karthik Somayaji NS – CV</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Curriculum Vitae – Karthik Somayaji NS, Ph.D. candidate in Electrical & Computer Engineering at UC Santa Barbara.">
+  <meta name="description"
+        content="Curriculum Vitae – Karthik Somayaji NS, Ph.D. student in Electrical & Computer Engineering at UC Santa Barbara.">
   <style>
     :root {
-      --bg: #0b0c10;
-      --bg-alt: #111318;
-      --card-bg: #141820;
-      --accent: #4fd1c5;
-      --accent-soft: rgba(79, 209, 197, 0.16);
+      --bg-page: #0f172a;
+      --bg-main: #020617;
+      --bg-card: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.12);
+      --accent-strong: #22c55e;
+      --border-subtle: rgba(148, 163, 184, 0.45);
       --text-main: #e5e7eb;
       --text-muted: #9ca3af;
-      --border-subtle: #1f2933;
-      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.45);
-      --radius-lg: 1.5rem;
-      --radius-md: 0.9rem;
+      --text-soft: #6b7280;
+      --radius-lg: 1.8rem;
+      --radius-md: 1rem;
       --radius-pill: 999px;
+      --shadow-main: 0 26px 80px rgba(15, 23, 42, 0.88);
       --font-body: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     }
 
     * {
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-      font-family: var(--font-body);
-      background: radial-gradient(circle at top, #111827 0, #020617 50%, #000000 100%);
+      background:
+        radial-gradient(circle at 10% 0%, #0b1120 0, transparent 55%),
+        radial-gradient(circle at 90% 0%, #0f172a 0, transparent 55%),
+        var(--bg-main);
       color: var(--text-main);
+      font-family: var(--font-body);
       -webkit-font-smoothing: antialiased;
     }
 
+    body {
+      min-height: 100vh;
+    }
+
     .page {
-      max-width: 980px;
-      margin: 2.5rem auto 3.5rem;
+      max-width: 1080px;
+      margin: 2.2rem auto 3.2rem;
       padding: 0 1.25rem;
     }
 
     @media (min-width: 1024px) {
       .page {
-        margin-top: 3.25rem;
+        margin-top: 3rem;
       }
     }
 
     .shell {
-      background: linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(17, 24, 39, 0.98));
-      border-radius: 2rem;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.14), transparent 55%),
+        linear-gradient(135deg, #020617, #020617);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      box-shadow: var(--shadow-main);
       padding: 2rem 1.5rem 2.5rem;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      backdrop-filter: blur(18px);
       position: relative;
       overflow: hidden;
     }
 
     @media (min-width: 768px) {
       .shell {
-        padding: 2.5rem 2.4rem 2.8rem;
+        padding: 2.4rem 2.4rem 2.8rem;
       }
     }
 
@@ -70,9 +82,10 @@
       position: absolute;
       inset: -40%;
       background:
-        radial-gradient(circle at 20% -10%, rgba(56, 189, 248, 0.16), transparent 55%),
-        radial-gradient(circle at 80% 120%, rgba(52, 211, 153, 0.18), transparent 55%);
-      opacity: 0.7;
+        radial-gradient(circle at 20% -10%, rgba(56, 189, 248, 0.15), transparent 60%),
+        radial-gradient(circle at 80% 120%, rgba(34, 197, 94, 0.2), transparent 60%);
+      mix-blend-mode: screen;
+      opacity: 0.55;
       pointer-events: none;
     }
 
@@ -81,126 +94,131 @@
       z-index: 1;
     }
 
-    /* Header */
-    .header {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      border-bottom: 1px solid var(--border-subtle);
-      padding-bottom: 1.25rem;
-      margin-bottom: 1.5rem;
+    /* LAYOUT: sidebar + content */
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.7rem;
     }
 
-    @media (min-width: 640px) {
-      .header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+    @media (min-width: 880px) {
+      .layout {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
+        gap: 2.2rem;
       }
     }
 
-    .header-main {
+    /* SIDEBAR */
+    .sidebar {
       display: flex;
       flex-direction: column;
-      gap: 0.2rem;
+      gap: 1.5rem;
+    }
+
+    .header-block {
+      padding: 1rem 1.1rem 1.2rem;
+      border-radius: 1.3rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background:
+        radial-gradient(circle at top right, rgba(56, 189, 248, 0.12), transparent 55%),
+        rgba(15, 23, 42, 0.95);
     }
 
     .name {
-      font-size: clamp(1.9rem, 4vw, 2.4rem);
+      font-size: clamp(1.9rem, 3.4vw, 2.3rem);
       font-weight: 720;
       letter-spacing: 0.04em;
       text-transform: uppercase;
+      margin-bottom: 0.25rem;
     }
 
-    .tagline {
+    .role {
       font-size: 0.95rem;
       color: var(--text-muted);
+      margin-bottom: 0.5rem;
     }
 
-    .chips {
+    .contact-line {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.25rem;
+      gap: 0.35rem 0.75rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-line span.icon {
+      opacity: 0.75;
+    }
+
+    .contact-link {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(56, 189, 248, 0.5);
+    }
+
+    .contact-link:hover {
+      border-bottom-style: solid;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.55rem;
     }
 
     .chip {
       font-size: 0.7rem;
       padding: 0.25rem 0.6rem;
       border-radius: var(--radius-pill);
-      background: rgba(15, 183, 255, 0.08);
-      border: 1px solid rgba(148, 163, 184, 0.45);
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--text-soft);
+      background: rgba(15, 23, 42, 0.9);
     }
 
-    .chip-accent {
-      border-color: rgba(45, 212, 191, 0.9);
-      background: rgba(45, 212, 191, 0.1);
-      color: #a5f3fc;
+    .chip-primary {
+      color: #e0f2fe;
+      border-color: rgba(56, 189, 248, 0.85);
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 60%),
+        rgba(15, 23, 42, 0.96);
     }
 
-    .header-contact {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.2rem;
-      margin-top: 0.75rem;
-    }
-
-    @media (min-width: 640px) {
-      .header-contact {
-        align-items: flex-end;
-        text-align: right;
-        margin-top: 0;
-      }
-    }
-
-    .contact-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+    .download-block {
+      padding: 0.85rem 1rem;
+      border-radius: 1rem;
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.92);
       font-size: 0.82rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
     }
 
-    .pill-link {
+    .download-button {
+      border-radius: var(--radius-pill);
+      padding: 0.35rem 0.8rem;
+      border: 1px solid var(--accent);
+      background: var(--accent-soft);
+      color: var(--text-main);
+      font-size: 0.8rem;
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
-      padding: 0.25rem 0.7rem;
-      border-radius: var(--radius-pill);
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(107, 114, 128, 0.7);
-      color: var(--text-main);
-      text-decoration: none;
-      transition: background 0.18s ease, border-color 0.18s ease, transform 0.12s ease;
     }
 
-    .pill-link span.icon {
+    .download-button span.icon {
       font-size: 0.9rem;
     }
 
-    .pill-link:hover {
-      background: rgba(31, 41, 55, 0.95);
-      border-color: var(--accent);
-      transform: translateY(-1px);
-    }
-
-    .pill-link.primary {
-      border-color: var(--accent);
-      background: radial-gradient(circle at top left, var(--accent-soft), transparent 55%);
-    }
-
-    /* Section */
+    /* SECTIONS */
     .section {
-      margin-top: 1.6rem;
-      padding-top: 1.1rem;
-      border-top: 1px solid rgba(31, 41, 55, 0.85);
-    }
-
-    .section:first-of-type {
-      margin-top: 0.6rem;
+      margin-bottom: 1.5rem;
     }
 
     .section-header {
@@ -208,167 +226,112 @@
       align-items: baseline;
       justify-content: space-between;
       gap: 0.75rem;
-      margin-bottom: 0.65rem;
+      margin-bottom: 0.7rem;
     }
 
     .section-title {
-      font-size: 0.98rem;
-      letter-spacing: 0.16em;
+      font-size: 0.9rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: #e5e7eb;
     }
 
+    .section-title::before {
+      content: "";
+      display: inline-block;
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 999px;
+      margin-right: 0.5rem;
+      background: radial-gradient(circle at 30% 20%, var(--accent), #22c55e);
+    }
+
     .section-subtitle {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: var(--text-muted);
-      letter-spacing: 0.08em;
       text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
 
-    /* Education & Experience layout */
-    .two-column {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.1rem;
-    }
-
-    @media (min-width: 768px) {
-      .two-column {
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.95fr);
-        gap: 1.6rem;
-      }
-    }
-
-    .item-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.9rem;
-    }
-
+    /* CARDS */
     .card {
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.96));
       border-radius: var(--radius-md);
-      border: 1px solid rgba(75, 85, 99, 0.7);
-      padding: 0.85rem 1rem 0.8rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 60%),
+        rgba(15, 23, 42, 0.96);
+      padding: 0.9rem 1rem 0.75rem;
+      margin-bottom: 0.65rem;
     }
 
-    .card-header {
+    .card-header-line {
       display: flex;
       justify-content: space-between;
-      gap: 0.7rem;
+      gap: 0.8rem;
       align-items: baseline;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.25rem;
     }
 
     .card-title {
       font-weight: 600;
-      font-size: 0.98rem;
+      font-size: 0.95rem;
     }
 
     .card-meta {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--accent);
       white-space: nowrap;
     }
 
-    .card-sub {
+    .card-sub-line {
       display: flex;
       justify-content: space-between;
-      gap: 0.7rem;
+      gap: 0.8rem;
       font-size: 0.8rem;
-      color: var(--text-muted);
+      color: var(--text-soft);
       margin-bottom: 0.35rem;
     }
 
-    .card-sub span {
+    .card-sub-line span {
       white-space: nowrap;
     }
 
-    .card-body {
-      margin-top: 0.25rem;
-    }
-
-    .bullets {
-      margin: 0.1rem 0 0;
+    .card-body ul {
+      margin: 0.1rem 0 0.1rem;
       padding-left: 1.05rem;
-      font-size: 0.85rem;
-      color: #d1d5db;
+      font-size: 0.86rem;
     }
 
-    .bullets li {
-      margin-bottom: 0.15rem;
+    .card-body li {
+      margin-bottom: 0.2rem;
     }
 
-    /* Projects */
-    .project-card {
-      margin-bottom: 0.9rem;
-      padding: 0.8rem 1rem 0.85rem;
-      border-radius: var(--radius-md);
-      background: radial-gradient(circle at top left, rgba(79, 209, 197, 0.09), transparent 58%),
-                  rgba(15, 23, 42, 0.96);
-      border: 1px solid rgba(75, 85, 99, 0.8);
+    /* list blocks */
+    .simple-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.4rem 0 0;
+      font-size: 0.86rem;
     }
 
-    .project-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 0.7rem;
-      align-items: baseline;
-      margin-bottom: 0.18rem;
+    .simple-list li {
+      margin-bottom: 0.3rem;
     }
 
-    .project-title {
-      font-weight: 560;
-      font-size: 0.95rem;
-    }
-
-    .project-date {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
-
-    .project-body {
-      font-size: 0.85rem;
-      color: #d1d5db;
-    }
-
-    .project-body ul {
-      margin: 0.18rem 0 0;
-      padding-left: 1.05rem;
-    }
-
-    .project-body li {
-      margin-bottom: 0.15rem;
-    }
-
-    /* Skills, Publications, Awards */
-    .tag-cloud {
+    .skills-row {
       display: flex;
       flex-wrap: wrap;
       gap: 0.35rem;
-      font-size: 0.82rem;
+      margin-top: 0.2rem;
     }
 
-    .tag {
-      padding: 0.3rem 0.7rem;
+    .skill-pill {
+      padding: 0.28rem 0.65rem;
       border-radius: var(--radius-pill);
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(75, 85, 99, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 0.8rem;
       color: #e5e7eb;
-    }
-
-    .pub-list,
-    .award-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 0.1rem 0 0;
-      font-size: 0.85rem;
-    }
-
-    .pub-list li,
-    .award-list li {
-      margin-bottom: 0.32rem;
+      background: rgba(15, 23, 42, 0.96);
     }
 
     .pub-title {
@@ -377,26 +340,25 @@
 
     .pub-venue {
       color: var(--accent);
-      font-size: 0.82rem;
-      margin-left: 0.18rem;
+      font-size: 0.8rem;
+      margin-left: 0.3rem;
     }
 
     .pub-status {
-      color: var(--text-muted);
       font-size: 0.8rem;
-      margin-left: 0.25rem;
+      color: var(--text-muted);
+      margin-left: 0.2rem;
     }
 
     .footer-note {
-      margin-top: 2.2rem;
+      margin-top: 1.8rem;
       font-size: 0.75rem;
-      color: var(--text-muted);
-      text-align: center;
+      color: var(--text-soft);
+      text-align: right;
     }
 
     a {
-      color: #7dd3fc;
-      text-decoration: none;
+      color: var(--accent);
     }
 
     a:hover {
@@ -406,394 +368,422 @@
 </head>
 <body>
   <div class="page">
-    <div class="shell">
+    <main class="shell">
       <div class="shell-inner">
+        <div class="layout">
 
-        <!-- HEADER -->
-        <header class="header">
-          <div class="header-main">
-            <div class="name">Karthik Somayaji NS</div>
-            <div class="tagline">
-              Ph.D. Candidate &middot; Electrical &amp; Computer Engineering &middot; University of California, Santa Barbara
-            </div>
-            <div class="chips">
-              <span class="chip chip-accent">ML for EDA</span>
-              <span class="chip">Uncertainty Quantification</span>
-              <span class="chip">Analog Circuit Optimization</span>
-              <span class="chip">Safe RL</span>
-            </div>
-          </div>
-          <div class="header-contact">
-            <div class="contact-row">
-              <a class="pill-link primary" href="mailto:karthi@ucsb.edu">
-                <span class="icon">✉️</span><span>karthi@ucsb.edu</span>
-              </a>
-              <span class="pill-link">
-                <span class="icon">📞</span><span>+1&nbsp;805&nbsp;280&nbsp;6785</span>
-              </span>
-            </div>
-            <div class="contact-row">
-              <a class="pill-link" href="https://github.com/karthik-somayaji" target="_blank" rel="noopener noreferrer">
-                <span class="icon">🐙</span><span>GitHub</span>
-              </a>
-              <a class="pill-link" href="https://scholar.google.com/citations?user=XCVHBNwAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-                <span class="icon">🎓</span><span>Google&nbsp;Scholar</span>
-              </a>
-              <a class="pill-link" href="https://www.linkedin.com/in/karthik-somayaji-453166137/" target="_blank" rel="noopener noreferrer">
-                <span class="icon">💼</span><span>LinkedIn</span>
-              </a>
-            </div>
-          </div>
-        </header>
+          <!-- SIDEBAR -->
+          <aside class="sidebar">
+            <section class="header-block">
+              <div class="name">Karthik Somayaji NS</div>
+              <div class="role">
+                Ph.D. Student, Electrical &amp; Computer Engineering<br>
+                University of California, Santa Barbara
+              </div>
 
-        <!-- EDUCATION & EXPERIENCE -->
-        <section class="section">
-          <div class="two-column">
-            <!-- Experience -->
-            <div>
+              <div class="contact-line">
+                <span class="icon">📞</span>
+                <span>805&nbsp;–&nbsp;280&nbsp;–&nbsp;6785</span>
+              </div>
+              <div class="contact-line">
+                <span class="icon">✉️</span>
+                <a class="contact-link" href="mailto:karthi@ucsb.edu">karthi@ucsb.edu</a>
+              </div>
+              <div class="contact-line">
+                <span class="icon">🔗</span>
+                <a class="contact-link" href="https://www.linkedin.com/in/karthik-somayaji-453166137/"
+                   target="_blank" rel="noopener noreferrer">
+                  linkedin.com/in/karthik
+                </a>
+              </div>
+              <div class="contact-line">
+                <span class="icon">🐙</span>
+                <a class="contact-link" href="https://github.com/karthik-somayaji"
+                   target="_blank" rel="noopener noreferrer">
+                  github.com/karthik
+                </a>
+              </div>
+              <div class="contact-line">
+                <span class="icon">🎓</span>
+                <a class="contact-link"
+                   href="https://scholar.google.com/citations?user=XCVHBNwAAAAJ&hl=en"
+                   target="_blank" rel="noopener noreferrer">
+                  google-scholar/karthik
+                </a>
+              </div>
+
+              <div class="chip-row">
+                <span class="chip chip-primary">ML for EDA</span>
+                <span class="chip">Uncertainty Quantification</span>
+                <span class="chip">Analog Circuit Optimization</span>
+                <span class="chip">Safe RL</span>
+              </div>
+            </section>
+
+            <!-- Optional: PDF download if you add resume.pdf to the repo -->
+            <section class="download-block">
+              <span>Prefer a PDF version of this CV?</span>
+              <a class="download-button" href="resume.pdf" target="_blank" rel="noopener noreferrer">
+                <span class="icon">⬇︎</span>
+                <span>Download PDF</span>
+              </a>
+            </section>
+
+            <!-- EDUCATION in sidebar -->
+            <section class="section">
               <div class="section-header">
-                <div class="section-title">Experience</div>
+                <h2 class="section-title">Education</h2>
               </div>
-              <div class="item-list">
 
-                <article class="card">
-                  <div class="card-header">
-                    <div class="card-title">Graduate Student Researcher</div>
-                    <div class="card-meta">Sep 2021 &ndash; Present</div>
-                  </div>
-                  <div class="card-sub">
-                    <span>University of California, Santa Barbara</span>
-                    <span>Santa Barbara, CA</span>
-                  </div>
-                  <div class="card-body">
-                    <div class="bullets">
-                      <ul>
-                        <li>Graduate Student Researcher &mdash; Advisor: Prof. Peng Li.</li>
-                        <li>Developed theoretically grounded algorithms for uncertainty quantification in reinforcement learning and large language models (LLMs).</li>
-                        <li>Proposed machine-learning-driven optimization frameworks for analog circuit design and verification, enabling domain-adapted AI for semiconductor workflows.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </article>
+              <article class="card">
+                <div class="card-header-line">
+                  <div class="card-title">University of California, Santa Barbara</div>
+                  <div class="card-meta">Sep 2021 &ndash; Dec 2026</div>
+                </div>
+                <div class="card-sub-line">
+                  <span>Doctor of Philosophy (PhD)</span>
+                  <span>Santa Barbara, CA</span>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <li>CGPA: <strong>3.8 / 4.0</strong></li>
+                  </ul>
+                </div>
+              </article>
 
-                <article class="card">
-                  <div class="card-header">
-                    <div class="card-title">Applied ML Research Intern</div>
-                    <div class="card-meta">Jun 2025 &ndash; Sep 2025</div>
-                  </div>
-                  <div class="card-sub">
-                    <span>Siemens EDA</span>
-                    <span>Fremont, CA</span>
-                  </div>
-                  <div class="card-body">
-                    <div class="bullets">
-                      <ul>
-                        <li>Developed symbolic modeling and symbolic sensitivity analysis for parasitic components in physical design, correlating RC variations to path delay in worst-slack nets.</li>
-                        <li>Achieved a 2× reduction in sensitivity analysis runtime while maintaining accuracy consistent with manual analysis.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </article>
+              <article class="card">
+                <div class="card-header-line">
+                  <div class="card-title">University of California, Santa Barbara</div>
+                  <div class="card-meta">Sep 2019 &ndash; Sep 2021</div>
+                </div>
+                <div class="card-sub-line">
+                  <span>Master of Science (MS)</span>
+                  <span>Santa Barbara, CA</span>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <li>CGPA: <strong>3.85 / 4.0</strong></li>
+                  </ul>
+                </div>
+              </article>
 
-                <article class="card">
-                  <div class="card-header">
-                    <div class="card-title">Applied ML Research Intern</div>
-                    <div class="card-meta">Jun 2024 &ndash; Sep 2024</div>
-                  </div>
-                  <div class="card-sub">
-                    <span>Siemens EDA</span>
-                    <span>Fremont, CA</span>
-                  </div>
-                  <div class="card-body">
-                    <div class="bullets">
-                      <ul>
-                        <li>Developed physics-informed ML optimization techniques for standard-cell delay matching, achieving 100× reduction in optimization turnaround time.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </article>
+              <article class="card">
+                <div class="card-header-line">
+                  <div class="card-title">PES University</div>
+                  <div class="card-meta">Aug 2014 &ndash; May 2018</div>
+                </div>
+                <div class="card-sub-line">
+                  <span>Bachelor of Technology (B.Tech)</span>
+                  <span>Bangalore, India</span>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <li>CGPA: <strong>9.11 / 10</strong></li>
+                  </ul>
+                </div>
+              </article>
+            </section>
+          </aside>
 
-                <article class="card">
-                  <div class="card-header">
-                    <div class="card-title">Summer Research Intern</div>
-                    <div class="card-meta">Jun 2022 &ndash; Sep 2022</div>
-                  </div>
-                  <div class="card-sub">
-                    <span>Intel Corporation</span>
-                    <span>Remote</span>
-                  </div>
-                  <div class="card-body">
-                    <div class="bullets">
-                      <ul>
-                        <li>Incorporated reinforcement learning for wire-path suggestions in global routing.</li>
-                        <li>Developed a transformer-based net-ordering algorithm using REINFORCE for combinatorial routing optimization, achieving 2× faster runtime compared to baselines.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </article>
+          <!-- MAIN CONTENT -->
+          <section>
 
-              </div>
-            </div>
-
-            <!-- Education -->
-            <div>
+            <!-- EXPERIENCE -->
+            <section class="section">
               <div class="section-header">
-                <div class="section-title">Education</div>
+                <h2 class="section-title">Experience</h2>
               </div>
-              <div class="item-list">
-                <article class="card">
-                  <div class="card-header">
-                    <div class="card-title">Ph.D., Electrical &amp; Computer Engineering</div>
-                    <div class="card-meta">Sep 2021 &ndash; Dec 2026</div>
-                  </div>
-                  <div class="card-sub">
-                    <span>University of California, Santa Barbara</span>
-                    <span>Santa Barbara, CA</span>
-                  </div>
-                  <div class="card-body">
-                    <div class="bullets">
-                      <ul>
-                        <li>CGPA: <strong>3.8 / 4.0</strong></li>
-                      </ul>
-                    </div>
-                  </div>
-                </article>
 
-                <article class="card">
-                  <div class="card-header">
-                    <div class="card-title">M.S., Electrical &amp; Computer Engineering</div>
-                    <div class="card-meta">Sep 2019 &ndash; Sep 2021</div>
+              <article class="card">
+                <div class="card-header-line">
+                  <div class="card-title">
+                    Graduate Student Researcher &mdash; Advisor: Prof. Peng Li
                   </div>
-                  <div class="card-sub">
-                    <span>University of California, Santa Barbara</span>
-                    <span>Santa Barbara, CA</span>
-                  </div>
-                  <div class="card-body">
-                    <div class="bullets">
-                      <ul>
-                        <li>CGPA: <strong>3.85 / 4.0</strong></li>
-                      </ul>
-                    </div>
-                  </div>
-                </article>
+                  <div class="card-meta">Sep 2021 &ndash; Present</div>
+                </div>
+                <div class="card-sub-line">
+                  <span>University of California, Santa Barbara</span>
+                  <span>Santa Barbara, CA</span>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <li>Developed theoretically grounded algorithms for uncertainty quantification in reinforcement learning and large language models (LLMs).</li>
+                    <li>Proposed machine-learning-driven optimization frameworks for analog circuit design and verification, enabling domain-adapted AI for semiconductor workflows.</li>
+                  </ul>
+                </div>
+              </article>
 
-                <article class="card">
-                  <div class="card-header">
-                    <div class="card-title">B.Tech, Computer Science (or related)</div>
-                    <div class="card-meta">Aug 2014 &ndash; May 2018</div>
-                  </div>
-                  <div class="card-sub">
-                    <span>PES University</span>
-                    <span>Bangalore, India</span>
-                  </div>
-                  <div class="card-body">
-                    <div class="bullets">
-                      <ul>
-                        <li>CGPA: <strong>9.11 / 10</strong></li>
-                      </ul>
-                    </div>
-                  </div>
-                </article>
+              <article class="card">
+                <div class="card-header-line">
+                  <div class="card-title">Applied ML Research Intern</div>
+                  <div class="card-meta">Jun 2025 &ndash; Sep 2025</div>
+                </div>
+                <div class="card-sub-line">
+                  <span>Siemens EDA</span>
+                  <span>Fremont, CA</span>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <li>Developed symbolic modeling and symbolic sensitivity analysis for parasitic components in physical design, correlating RC variations to path delay in worst-slack nets.</li>
+                    <li>Achieved a 2× reduction in sensitivity analysis runtime while maintaining accuracy consistent with manual analysis.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-header-line">
+                  <div class="card-title">Applied ML Research Intern</div>
+                  <div class="card-meta">Jun 2024 &ndash; Sep 2024</div>
+                </div>
+                <div class="card-sub-line">
+                  <span>Siemens EDA</span>
+                  <span>Fremont, CA</span>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <li>Developed physics-informed ML optimization techniques for standard-cell delay matching, achieving 100× reduction in optimization turnaround time.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-header-line">
+                  <div class="card-title">Summer Research Intern</div>
+                  <div class="card-meta">Jun 2022 &ndash; Sep 2022</div>
+                </div>
+                <div class="card-sub-line">
+                  <span>Intel Corporation</span>
+                  <span>Remote</span>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <li>Incorporated reinforcement learning for wire-path suggestions in global routing.</li>
+                    <li>Developed a transformer-based net-ordering algorithm using REINFORCE for combinatorial routing optimization, achieving 2× faster runtime compared to baselines.</li>
+                  </ul>
+                </div>
+              </article>
+            </section>
+
+            <!-- PROJECTS -->
+            <section class="section">
+              <div class="section-header">
+                <h2 class="section-title">Projects</h2>
               </div>
-            </div>
 
-          </div>
-        </section>
+              <article class="card">
+                <div class="card-header-line">
+                  <div class="card-title">Safe Inference for Reasoning LLMs: An Uncertainty Perspective</div>
+                  <div class="card-meta">Dec 2025</div>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <li>Formulated a step- and path-level uncertainty score for chain-of-thought LLMs by leveraging time-consistent signatures across multiple sampled reasoning traces.</li>
+                    <li>Used the proposed score to drive safe answer selection and abstention, improving best-of-N selection on math reasoning and general-knowledge benchmarks over logit- and confidence-based baselines.</li>
+                  </ul>
+                </div>
+              </article>
 
-        <!-- PROJECTS -->
-        <section class="section">
-          <div class="section-header">
-            <div class="section-title">Projects &amp; Research Highlights</div>
-          </div>
+              <article class="card">
+                <div class="card-header-line">
+                  <div class="card-title">GAUSS: Graph-Aligned Uncertainty for Long-Form LLM Generation</div>
+                  <div class="card-meta">Sep 2025</div>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <li>Modeled each generated paragraph as a semantic graph of atomic facts and inter-fact relations, and defined uncertainty as the expected alignment cost between an anchor graph and alternative generations via an optimal-transport-based graph distance.</li>
+                    <li>Showed that GAUSS yields uncertainty scores that better track factual consistency and structural coherence than probability- and calibration-based baselines on long-form clinical, legal, and encyclopedic benchmarks.</li>
+                  </ul>
+                </div>
+              </article>
 
-          <article class="project-card">
-            <div class="project-header">
-              <div class="project-title">Safe Inference for Reasoning LLMs: An Uncertainty Perspective</div>
-              <div class="project-date">Dec 2025</div>
-            </div>
-            <div class="project-body">
-              <ul>
-                <li>Formulated a step- and path-level uncertainty score for chain-of-thought LLMs by leveraging time-consistent signatures across multiple sampled reasoning traces.</li>
-                <li>Used the proposed score to drive safe answer selection and abstention, improving best-of-<em>N</em> selection on math reasoning and general-knowledge benchmarks over logit- and confidence-based baselines.</li>
+              <article class="card">
+                <div class="card-header-line">
+                  <div class="card-title">LLM-USO: Large Language Model-Based Universal Sizing Optimizer for Analog Circuits</div>
+                  <div class="card-meta">Sep 2025</div>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <li>Designed a hybrid BO–LLM framework that extracts structured design-knowledge summaries linking performance metrics, critical sub-structures, and sizing parameters, and reuses them across circuits with shared sub-topologies.</li>
+                    <li>Integrated a critique LLM and GP-based uncertainty ranking of LLM suggestions, achieving better gain/CMRR/UGF and reduced simulation budgets than GP-BO and ADO-LLM on amplifiers, comparators, LDOs, and DC–DC converters.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-header-line">
+                  <div class="card-title">ADO-KT: Analog Design Optimization via Knowledge Transfer Using LLMs</div>
+                  <div class="card-meta">Jun 2025</div>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <li>Built AI analog design agents that represent transistor-level netlists as multi-layer knowledge graphs and use LLMs to extract, critique, and transfer human-interpretable design rules between circuits with shared sub-structures.</li>
+                    <li>Demonstrated that graph-based knowledge transfer accelerates convergence and improves final performance trade-offs compared to per-circuit optimization baselines with no cross-task knowledge reuse.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-header-line">
+                  <div class="card-title">Extreme Risk Mitigation in Reinforcement Learning Using Extreme Value Theory</div>
+                  <div class="card-meta">Jan 2024</div>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <li>Introduced an EVT-based parameterization of the tail of the distributional state–action value function using generalized Pareto distributions, enabling explicit modeling of rare catastrophic events.</li>
+                    <li>Provided theoretical guarantees on tail-risk control and empirically reduced the frequency and severity of catastrophic failures versus standard risk-sensitive RL algorithms across diverse continuous-control tasks.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-header-line">
+                  <div class="card-title">Representation Learning for Analog Performance Modelling</div>
+                  <div class="card-meta">Feb 2024</div>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <li>Developed a semi-supervised contrastive regression framework (Learn-by-Compare) that learns latent representations of sizing solutions by comparing performance-similar and dissimilar design pairs.</li>
+                    <li>Designed transistor-level data augmentations (local-scaling and global-symmetry based) using circuit design knowledge, achieving higher analog performance prediction accuracy than conventional supervised regressors.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-header-line">
+                  <div class="card-title">Pareto Optimization of Analog Circuits Using Reinforcement Learning</div>
+                  <div class="card-meta">Dec 2023</div>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <li>Extended multi-objective reinforcement learning to continuous state and action spaces for analog circuit sizing, learning a single preference-conditioned policy to generate Pareto-optimal design points.</li>
+                    <li>Produced high-quality Pareto fronts and competitive or better sample efficiency compared to NSGA-II and other multi-objective baselines on multiple analog circuit benchmarks.</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="card-header-line">
+                  <div class="card-title">Optimization of Analog Circuit Design Using Prioritized Reinforcement Learning</div>
+                <div class="card-meta">Dec 2021</div>
+                </div>
+                <div class="card-body">
+                  <ul>
+                    <li>Proposed a prioritized replay RL framework that incorporates designer knowledge into the critic network, reward shaping, and prioritized experience replay to make analog circuit sizing more sample efficient.</li>
+                    <li>Achieved faster convergence to high-performance design points and reduced transistor-level simulation calls relative to vanilla deep RL baselines on op-amp sizing tasks.</li>
+                  </ul>
+                </div>
+              </article>
+            </section>
+
+            <!-- TECHNICAL SKILLS -->
+            <section class="section">
+              <div class="section-header">
+                <h2 class="section-title">Technical Skills</h2>
+              </div>
+              <div class="skills-row">
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">Matlab</span>
+                <span class="skill-pill">Verilog</span>
+                <span class="skill-pill">LaTeX</span>
+                <span class="skill-pill">PyTorch</span>
+                <span class="skill-pill">OpenAI Gym</span>
+                <span class="skill-pill">Pandas</span>
+                <span class="skill-pill">NumPy</span>
+                <span class="skill-pill">Scikit-Learn</span>
+                <span class="skill-pill">Matplotlib</span>
+                <span class="skill-pill">Seaborn</span>
+              </div>
+            </section>
+
+            <!-- PUBLICATIONS -->
+            <section class="section">
+              <div class="section-header">
+                <h2 class="section-title">Publications</h2>
+              </div>
+              <ul class="simple-list">
+                <li>
+                  <span class="pub-title">
+                    Domain-Specific Optimization for Fast and Accurate Delay Matching in Parasitic Extraction Qualification
+                  </span>
+                  <span class="pub-status">(Under Review)</span>
+                  <span class="pub-venue">ACM TODAES</span>
+                </li>
+                <li>
+                  <span class="pub-title">
+                    GAUSS: Graph-Assisted Uncertainty Quantification using Structure and Semantics for Long-Form Generation in LLMs
+                  </span>
+                  <span class="pub-status">(Under Review)</span>
+                  <span class="pub-venue">ICLR&#39;26</span>
+                </li>
+                <li>
+                  <span class="pub-title">
+                    AI Analog Circuit Design Agents: On Knowledge Extraction and Transfer with Knowledge Graphs
+                  </span>
+                  <span class="pub-venue">ICCAD&#39;25</span>
+                </li>
+                <li>
+                  <span class="pub-title">
+                    LLM-USO: Large Language Model-based Universal Sizing Optimizer
+                  </span>
+                  <span class="pub-venue">TCAD&#39;25</span>
+                </li>
+                <li>
+                  <span class="pub-title">
+                    Learn-by-Compare: Analog Performance Prediction using Contrastive Regression with Design Knowledge
+                  </span>
+                  <span class="pub-venue">DAC&#39;24</span>
+                </li>
+                <li>
+                  <span class="pub-title">
+                    Extreme Risk Mitigation in Reinforcement Learning using Extreme Value Theory
+                  </span>
+                  <span class="pub-venue">TMLR&#39;24</span>
+                </li>
+                <li>
+                  <span class="pub-title">
+                    Pareto Optimization of Analog circuits using Reinforcement Learning
+                  </span>
+                  <span class="pub-venue">ACM TODAES&#39;24</span>
+                </li>
+                <li>
+                  <span class="pub-title">
+                    Prioritized Reinforcement Learning for Circuit Optimization with Design Knowledge
+                  </span>
+                  <span class="pub-venue">DAC&#39;21</span>
+                </li>
               </ul>
-            </div>
-          </article>
+            </section>
 
-          <article class="project-card">
-            <div class="project-header">
-              <div class="project-title">GAUSS: Graph-Aligned Uncertainty for Long-Form LLM Generation</div>
-              <div class="project-date">Sep 2025</div>
-            </div>
-            <div class="project-body">
-              <ul>
-                <li>Modeled each generated paragraph as a semantic graph of atomic facts and inter-fact relations, and defined uncertainty as the expected alignment cost between an anchor graph and alternative generations via an optimal-transport-based graph distance.</li>
-                <li>Showed that GAUSS yields uncertainty scores that better track factual consistency and structural coherence than probability- and calibration-based baselines on long-form clinical, legal, and encyclopedic benchmarks.</li>
+            <!-- AWARDS -->
+            <section class="section">
+              <div class="section-header">
+                <h2 class="section-title">Awards &amp; Honors</h2>
+              </div>
+              <ul class="simple-list">
+                <li>
+                  Our work on extreme-value reinforcement learning has been awarded the
+                  <strong>J2C certification</strong> and was selected for presentation at <strong>ICLR&#39;25</strong>.
+                </li>
+                <li>
+                  Our work on extreme-value reinforcement learning was featured in <strong>SIAM News (2024)</strong>.
+                </li>
+                <li>
+                  <strong>DAC Young Fellowship 2021</strong> &mdash; successfully completed Cadence Design System’s HLS mini-project
+                  and presented a short summary of my interests.
+                </li>
               </ul>
-            </div>
-          </article>
+            </section>
 
-          <article class="project-card">
-            <div class="project-header">
-              <div class="project-title">LLM-USO: Large Language Model-Based Universal Sizing Optimizer for Analog Circuits</div>
-              <div class="project-date">Sep 2025</div>
+            <div class="footer-note">
+              Last updated: December 2025 &mdash; For the latest publications, see
+              <a href="https://scholar.google.com/citations?user=XCVHBNwAAAAJ&hl=en"
+                 target="_blank" rel="noopener noreferrer">Google Scholar</a>.
             </div>
-            <div class="project-body">
-              <ul>
-                <li>Designed a hybrid BO–LLM framework that extracts structured design-knowledge summaries linking performance metrics, critical sub-structures, and sizing parameters, and reuses them across circuits with shared sub-topologies.</li>
-                <li>Integrated a critique LLM and GP-based uncertainty ranking of LLM suggestions, achieving better gain/CMRR/UGF and reduced simulation budgets than GP-BO and ADO-LLM on amplifiers, comparators, LDOs, and DC–DC converters.</li>
-              </ul>
-            </div>
-          </article>
 
-          <article class="project-card">
-            <div class="project-header">
-              <div class="project-title">ADO-KT: Analog Design Optimization via Knowledge Transfer Using LLMs</div>
-              <div class="project-date">Jun 2025</div>
-            </div>
-            <div class="project-body">
-              <ul>
-                <li>Built AI analog design agents that represent transistor-level netlists as multi-layer knowledge graphs and use LLMs to extract, critique, and transfer human-interpretable design rules between circuits with shared sub-structures.</li>
-                <li>Demonstrated that graph-based knowledge transfer accelerates convergence and improves final power–performance–area trade-offs compared to per-circuit optimization baselines with no cross-task knowledge reuse.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-header">
-              <div class="project-title">Extreme Risk Mitigation in Reinforcement Learning Using Extreme Value Theory</div>
-              <div class="project-date">Jan 2024</div>
-            </div>
-            <div class="project-body">
-              <ul>
-                <li>Introduced an EVT-based parameterization of the tail of the distributional state–action value function using generalized Pareto distributions, enabling explicit modeling of rare catastrophic events.</li>
-                <li>Provided theoretical guarantees on tail-risk control and empirically reduced the frequency and severity of catastrophic failures versus standard risk-sensitive RL algorithms across diverse continuous-control tasks.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-header">
-              <div class="project-title">Representation Learning for Analog Performance Modelling (with Zihu Wang)</div>
-              <div class="project-date">Feb 2024</div>
-            </div>
-            <div class="project-body">
-              <ul>
-                <li>Co-developed a semi-supervised contrastive regression framework (Learn-by-Compare) that learns latent representations of sizing solutions by comparing performance-similar and dissimilar design pairs.</li>
-                <li>Designed transistor-level data augmentations (local-scaling and global-symmetry based) using circuit design knowledge, achieving higher analog performance prediction accuracy than conventional supervised regressors on DAC&#39;24 benchmarks.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-header">
-              <div class="project-title">Pareto Optimization of Analog Circuits Using Reinforcement Learning</div>
-              <div class="project-date">Dec 2023</div>
-            </div>
-            <div class="project-body">
-              <ul>
-                <li>Extended multi-objective reinforcement learning to continuous state and action spaces for analog circuit sizing, learning a single preference-conditioned policy to generate Pareto-optimal design points.</li>
-                <li>Produced high-quality Pareto fronts and competitive or better sample efficiency compared to NSGA-II and other multi-objective baselines on multiple industrial analog circuit benchmarks.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-header">
-              <div class="project-title">Optimization of Analog Circuit Design Using Prioritized Reinforcement Learning</div>
-              <div class="project-date">Dec 2021</div>
-            </div>
-            <div class="project-body">
-              <ul>
-                <li>Proposed a prioritized RL framework that incorporates designer knowledge into the critic network, reward shaping, and prioritized experience replay to make analog circuit sizing more sample efficient.</li>
-                <li>Achieved faster convergence to high-performance design points and reduced transistor-level simulation calls relative to vanilla deep RL baselines on op-amp sizing tasks.</li>
-              </ul>
-            </div>
-          </article>
-
-        </section>
-
-        <!-- TECHNICAL SKILLS -->
-        <section class="section">
-          <div class="section-header">
-            <div class="section-title">Technical Skills</div>
-          </div>
-          <div class="tag-cloud">
-            <span class="tag">Python</span>
-            <span class="tag">MATLAB</span>
-            <span class="tag">Verilog</span>
-            <span class="tag">LaTeX</span>
-            <span class="tag">PyTorch</span>
-            <span class="tag">OpenAI Gym</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">NumPy</span>
-            <span class="tag">Scikit-Learn</span>
-            <span class="tag">Matplotlib</span>
-            <span class="tag">Seaborn</span>
-          </div>
-        </section>
-
-        <!-- PUBLICATIONS -->
-        <section class="section">
-          <div class="section-header">
-            <div class="section-title">Publications</div>
-          </div>
-          <ul class="pub-list">
-            <li>
-              <span class="pub-title">Domain-Specific Optimization for Fast and Accurate Delay Matching in Parasitic Extraction Qualification</span>
-              <span class="pub-status">(Under review)</span>
-              <span class="pub-venue">ACM TODAES</span>
-            </li>
-            <li>
-              <span class="pub-title">GAUSS: Graph-Assisted Uncertainty Quantification using Structure and Semantics for Long-Form Generation in LLMs</span>
-              <span class="pub-status">(Under review)</span>
-              <span class="pub-venue">ICLR&#39;26</span>
-            </li>
-            <li>
-              <span class="pub-title">AI Analog Circuit Design Agents: On Knowledge Extraction and Transfer with Knowledge Graphs</span>
-              <span class="pub-venue">ICCAD&#39;25</span>
-            </li>
-            <li>
-              <span class="pub-title">LLM-USO: Large Language Model-based Universal Sizing Optimizer</span>
-              <span class="pub-venue">IEEE TCAD&#39;25</span>
-            </li>
-            <li>
-              <span class="pub-title">Learn-by-Compare: Analog Performance Prediction using Contrastive Regression with Design Knowledge</span>
-              <span class="pub-venue">DAC&#39;24</span>
-            </li>
-            <li>
-              <span class="pub-title">Extreme Risk Mitigation in Reinforcement Learning using Extreme Value Theory</span>
-              <span class="pub-venue">TMLR&#39;24</span>
-            </li>
-            <li>
-              <span class="pub-title">Pareto Optimization of Analog Circuits using Reinforcement Learning</span>
-              <span class="pub-venue">ACM TODAES&#39;24</span>
-            </li>
-            <li>
-              <span class="pub-title">Prioritized Reinforcement Learning for Circuit Optimization with Design Knowledge</span>
-              <span class="pub-venue">DAC&#39;21</span>
-            </li>
-          </ul>
-        </section>
-
-        <!-- AWARDS -->
-        <section class="section">
-          <div class="section-header">
-            <div class="section-title">Awards &amp; Honors</div>
-          </div>
-          <ul class="award-list">
-            <li>Work on extreme-value reinforcement learning awarded <strong>J2C certification</strong> and selected for presentation at <strong>ICLR&#39;25</strong>.</li>
-            <li>Extreme-value reinforcement learning work featured in <strong>SIAM News (2024)</strong>.</li>
-            <li><strong>DAC Young Fellowship 2021</strong> &mdash; successfully completed Cadence Design Systems HLS mini-project and presented a short summary of research interests.</li>
-          </ul>
-        </section>
-
-        <div class="footer-note">
-          Last updated: <span>December 2025</span> &mdash; For the latest publications, see
-          <a href="https://scholar.google.com/citations?user=XCVHBNwAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>.
+          </section>
         </div>
-
       </div>
-    </div>
+    </main>
   </div>
 </body>
 </html>
