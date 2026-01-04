@@ -295,16 +295,6 @@
       font-size: 0.95rem;
     }
 
-    .card-title-link {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .card-title-link:hover {
-      color: var(--accent);
-      text-decoration: underline;
-    }
-
     .card-meta {
       font-size: 0.78rem;
       color: var(--accent);
@@ -325,13 +315,32 @@
     }
 
     .card-body ul {
-      margin: 0.1rem 0 0.1rem;
+      margin: 0.1rem 0 0.2rem;
       padding-left: 1.05rem;
       font-size: 0.86rem;
     }
 
     .card-body li {
       margin-bottom: 0.2rem;
+    }
+
+    .project-link-row {
+      margin-top: 0.25rem;
+      font-size: 0.8rem;
+    }
+
+    .project-link {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      text-decoration: none;
+      color: var(--accent);
+      border-bottom: 1px dotted rgba(56, 189, 248, 0.6);
+    }
+
+    .project-link:hover {
+      border-bottom-style: solid;
+      text-decoration: none;
     }
 
     /* list blocks */
@@ -605,11 +614,7 @@
 
               <article class="card">
                 <div class="card-header-line">
-                  <div class="card-title">
-                    <a class="card-title-link" href="#" target="_blank" rel="noopener noreferrer">
-                      Safe Inference for Reasoning LLMs: An Uncertainty Perspective
-                    </a>
-                  </div>
+                  <div class="card-title">Safe Inference for Reasoning LLMs: An Uncertainty Perspective</div>
                   <div class="card-meta">Dec 2025</div>
                 </div>
                 <div class="card-body">
@@ -617,16 +622,17 @@
                     <li>Formulated a step- and path-level uncertainty score for chain-of-thought LLMs by leveraging time-consistent signatures across multiple sampled reasoning traces.</li>
                     <li>Used the proposed score to drive safe answer selection and abstention, improving best-of-N selection on math reasoning and general-knowledge benchmarks over logit- and confidence-based baselines.</li>
                   </ul>
+                  <div class="project-link-row">
+                    <a class="project-link" href="#" target="_blank" rel="noopener noreferrer">
+                      &lt;Project Link&gt;
+                    </a>
+                  </div>
                 </div>
               </article>
 
               <article class="card">
                 <div class="card-header-line">
-                  <div class="card-title">
-                    <a class="card-title-link" href="#" target="_blank" rel="noopener noreferrer">
-                      GAUSS: Graph-Aligned Uncertainty for Long-Form LLM Generation
-                    </a>
-                  </div>
+                  <div class="card-title">GAUSS: Graph-Aligned Uncertainty for Long-Form LLM Generation</div>
                   <div class="card-meta">Sep 2025</div>
                 </div>
                 <div class="card-body">
@@ -634,16 +640,17 @@
                     <li>Modeled each generated paragraph as a semantic graph of atomic facts and inter-fact relations, and defined uncertainty as the expected alignment cost between an anchor graph and alternative generations via an optimal-transport-based graph distance.</li>
                     <li>Showed that GAUSS yields uncertainty scores that better track factual consistency and structural coherence than probability- and calibration-based baselines on long-form clinical, legal, and encyclopedic benchmarks.</li>
                   </ul>
+                  <div class="project-link-row">
+                    <a class="project-link" href="#" target="_blank" rel="noopener noreferrer">
+                      &lt;Project Link&gt;
+                    </a>
+                  </div>
                 </div>
               </article>
 
               <article class="card">
                 <div class="card-header-line">
-                  <div class="card-title">
-                    <a class="card-title-link" href="#" target="_blank" rel="noopener noreferrer">
-                      LLM-USO: Large Language Model-Based Universal Sizing Optimizer for Analog Circuits
-                    </a>
-                  </div>
+                  <div class="card-title">LLM-USO: Large Language Model-Based Universal Sizing Optimizer for Analog Circuits</div>
                   <div class="card-meta">Sep 2025</div>
                 </div>
                 <div class="card-body">
@@ -651,16 +658,17 @@
                     <li>Designed a hybrid BO–LLM framework that extracts structured design-knowledge summaries linking performance metrics, critical sub-structures, and sizing parameters, and reuses them across circuits with shared sub-topologies.</li>
                     <li>Integrated a critique LLM and GP-based uncertainty ranking of LLM suggestions, achieving better gain/CMRR/UGF and reduced simulation budgets than GP-BO and ADO-LLM on amplifiers, comparators, LDOs, and DC–DC converters.</li>
                   </ul>
+                  <div class="project-link-row">
+                    <a class="project-link" href="#" target="_blank" rel="noopener noreferrer">
+                      &lt;Project Link&gt;
+                    </a>
+                  </div>
                 </div>
               </article>
 
               <article class="card">
                 <div class="card-header-line">
-                  <div class="card-title">
-                    <a class="card-title-link" href="#" target="_blank" rel="noopener noreferrer">
-                      ADO-KT: Analog Design Optimization via Knowledge Transfer Using LLMs
-                    </a>
-                  </div>
+                  <div class="card-title">ADO-KT: Analog Design Optimization via Knowledge Transfer Using LLMs</div>
                   <div class="card-meta">Jun 2025</div>
                 </div>
                 <div class="card-body">
@@ -668,16 +676,17 @@
                     <li>Built AI analog design agents that represent transistor-level netlists as multi-layer knowledge graphs and use LLMs to extract, critique, and transfer human-interpretable design rules between circuits with shared sub-structures.</li>
                     <li>Demonstrated that graph-based knowledge transfer accelerates convergence and improves final performance trade-offs compared to per-circuit optimization baselines with no cross-task knowledge reuse.</li>
                   </ul>
+                  <div class="project-link-row">
+                    <a class="project-link" href="#" target="_blank" rel="noopener noreferrer">
+                      &lt;Project Link&gt;
+                    </a>
+                  </div>
                 </div>
               </article>
 
               <article class="card">
                 <div class="card-header-line">
-                  <div class="card-title">
-                    <a class="card-title-link" href="#" target="_blank" rel="noopener noreferrer">
-                      Extreme Risk Mitigation in Reinforcement Learning Using Extreme Value Theory
-                    </a>
-                  </div>
+                  <div class="card-title">Extreme Risk Mitigation in Reinforcement Learning Using Extreme Value Theory</div>
                   <div class="card-meta">Jan 2024</div>
                 </div>
                 <div class="card-body">
@@ -685,16 +694,17 @@
                     <li>Introduced an EVT-based parameterization of the tail of the distributional state–action value function using generalized Pareto distributions, enabling explicit modeling of rare catastrophic events.</li>
                     <li>Provided theoretical guarantees on tail-risk control and empirically reduced the frequency and severity of catastrophic failures versus standard risk-sensitive RL algorithms across diverse continuous-control tasks.</li>
                   </ul>
+                  <div class="project-link-row">
+                    <a class="project-link" href="#" target="_blank" rel="noopener noreferrer">
+                      &lt;Project Link&gt;
+                    </a>
+                  </div>
                 </div>
               </article>
 
               <article class="card">
                 <div class="card-header-line">
-                  <div class="card-title">
-                    <a class="card-title-link" href="#" target="_blank" rel="noopener noreferrer">
-                      Representation Learning for Analog Performance Modelling
-                    </a>
-                  </div>
+                  <div class="card-title">Representation Learning for Analog Performance Modelling</div>
                   <div class="card-meta">Feb 2024</div>
                 </div>
                 <div class="card-body">
@@ -702,16 +712,17 @@
                     <li>Developed a semi-supervised contrastive regression framework (Learn-by-Compare) that learns latent representations of sizing solutions by comparing performance-similar and dissimilar design pairs.</li>
                     <li>Designed transistor-level data augmentations (local-scaling and global-symmetry based) using circuit design knowledge, achieving higher analog performance prediction accuracy than conventional supervised regressors.</li>
                   </ul>
+                  <div class="project-link-row">
+                    <a class="project-link" href="#" target="_blank" rel="noopener noreferrer">
+                      &lt;Project Link&gt;
+                    </a>
+                  </div>
                 </div>
               </article>
 
               <article class="card">
                 <div class="card-header-line">
-                  <div class="card-title">
-                    <a class="card-title-link" href="#" target="_blank" rel="noopener noreferrer">
-                      Pareto Optimization of Analog Circuits Using Reinforcement Learning
-                    </a>
-                  </div>
+                  <div class="card-title">Pareto Optimization of Analog Circuits Using Reinforcement Learning</div>
                   <div class="card-meta">Dec 2023</div>
                 </div>
                 <div class="card-body">
@@ -719,16 +730,17 @@
                     <li>Extended multi-objective reinforcement learning to continuous state and action spaces for analog circuit sizing, learning a single preference-conditioned policy to generate Pareto-optimal design points.</li>
                     <li>Produced high-quality Pareto fronts and competitive or better sample efficiency compared to NSGA-II and other multi-objective baselines on multiple analog circuit benchmarks.</li>
                   </ul>
+                  <div class="project-link-row">
+                    <a class="project-link" href="#" target="_blank" rel="noopener noreferrer">
+                      &lt;Project Link&gt;
+                    </a>
+                  </div>
                 </div>
               </article>
 
               <article class="card">
                 <div class="card-header-line">
-                  <div class="card-title">
-                    <a class="card-title-link" href="#" target="_blank" rel="noopener noreferrer">
-                      Optimization of Analog Circuit Design Using Prioritized Reinforcement Learning
-                    </a>
-                  </div>
+                  <div class="card-title">Optimization of Analog Circuit Design Using Prioritized Reinforcement Learning</div>
                   <div class="card-meta">Dec 2021</div>
                 </div>
                 <div class="card-body">
@@ -736,6 +748,11 @@
                     <li>Proposed a prioritized replay RL framework that incorporates designer knowledge into the critic network, reward shaping, and prioritized experience replay to make analog circuit sizing more sample efficient.</li>
                     <li>Achieved faster convergence to high-performance design points and reduced transistor-level simulation calls relative to vanilla deep RL baselines on op-amp sizing tasks.</li>
                   </ul>
+                  <div class="project-link-row">
+                    <a class="project-link" href="#" target="_blank" rel="noopener noreferrer">
+                      &lt;Project Link&gt;
+                    </a>
+                  </div>
                 </div>
               </article>
             </section>
